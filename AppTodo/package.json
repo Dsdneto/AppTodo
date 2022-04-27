@@ -1,6 +1,6 @@
 {
-  "name": "ionic-app-base",
-  "version": "0.0.0",
+  "name": "AppTodo",
+  "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -19,7 +19,11 @@
     "@angular/platform-browser": "~13.2.2",
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
+    "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.5.0",
+    "@capacitor/haptics": "1.1.4",
+    "@capacitor/keyboard": "1.2.2",
+    "@capacitor/status-bar": "1.0.8",
     "@ionic/angular": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
@@ -57,5 +61,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.4.4"
-  }
+  },
+  "description": "An Ionic project"
 }
