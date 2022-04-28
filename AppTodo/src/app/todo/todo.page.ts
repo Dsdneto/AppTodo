@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-todo',
+  templateUrl: './todo.page.html',
+  styleUrls: ['./todo.page.scss'],
 })
-export class HomePage {
+export class TODOPage implements OnInit {
 
   constructor(private alertCrtl: AlertController) {}
+
+
+  ngOnInit() {
+  }
 
   async showAdd() {
     const alert = await this.alertCrtl.create({
@@ -40,5 +44,5 @@ export class HomePage {
     });
 
     await alert.present();
-  }
+
 }
