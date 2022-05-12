@@ -9,6 +9,7 @@ import { ActionSheetController, AlertController, ToastController } from '@ionic/
 export class HomePage {
 
   tarefas: any [] = [];
+  todoService: any;
 
   constructor(private alertCrtl: AlertController, private toastCtrl: ToastController, private actionSheetCrtl: ActionSheetController) {
 
@@ -25,7 +26,7 @@ export class HomePage {
       header: 'O que você deseja fazer?',
       inputs: [
         {
-          name: 'tarefa1',
+          name: 'tarefa1', 
           type: 'text',
           placeholder: 'Digite o que deseja fazer.',
         },
@@ -53,6 +54,7 @@ export class HomePage {
 
   async adicionaTarefa(novaTarefa: string) {
     if (novaTarefa.trim().length <1 ){
+
       const toast = await this.toastCtrl.create({
 
         message: 'Por favor, digite a tarefa!',
@@ -63,13 +65,20 @@ export class HomePage {
 
       toast.present();
       return;
-
-      
     }
-    const tarefa = {nome:novaTarefa, realizada:false};
+    
+    const tarefa = {nome:novaTarefa, realizada: 0};
     this.tarefas.push(tarefa); 
 
-    this.salvarLocalStorage();
+    this.todoService.adicionarTarefa(tarefa.nome, tarefa.realizada)
+    .then((resposta)=>{
+      console.log(resposta);
+    })
+    .catch((erro)=>{
+      console.error(erro);
+    })
+
+    //this.salvarLocalStorage();
   }
 
   salvarLocalStorage(){
