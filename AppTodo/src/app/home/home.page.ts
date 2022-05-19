@@ -85,6 +85,7 @@ export class HomePage {
       });
       toast.present();
       this.carregaTarefa();
+      
     })
     .catch(async(erro)=>{
       const toast = await this.toastCtrl.create({

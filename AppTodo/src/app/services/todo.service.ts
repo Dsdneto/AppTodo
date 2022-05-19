@@ -9,7 +9,7 @@ export class TodoService {
   constructor(private http: HttpClient) { }
 
 
-  adicionarTarefa(tarefa: string, realizada: any){
+  adicionarTarefa(tarefa:string, realizada: any){
     const url = 'http://localhost/ApiTodo/api.php';
 
     const param = {tarefa: tarefa, realizada: realizada};
